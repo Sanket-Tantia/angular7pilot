@@ -1,3 +1,17 @@
-<p>
-  home works!
-</p>
+<!-- for attribute binding wrap it in brackets -->
+<p [class.red]="pStyle">home works!</p>
+
+<h1 [ngClass]="{'red':!pStyle,'large':pStyle}">
+  I am using ngClass for modifying multiple classes
+</h1>
+
+<h1 [style.color]="pStyle? 'red' : 'green'">
+  I am directly modifying single css properties
+</h1>
+
+<h1 [ngStyle]="{'color': pStyle ? 'red' : 'green','font-size': !pStyle ? '1em':'5em'}">
+  I am using ngStyle for directly modifying multiple css properties
+</h1>
+
+<!-- wrap the event in paranthesis for event binding with ts  -->
+<button (click)="clickMe()">Click me</button>

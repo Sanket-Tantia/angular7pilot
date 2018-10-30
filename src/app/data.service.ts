@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import {HttpClient} from  '@angular/common/http'
 /**
  * Services have injectable decorator
  */
@@ -8,9 +8,9 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  clickMe(){
-    console.log("I am working from service");
+  getUsers(){
+    return this.http.get("https://reqres.in/api/users");
   }
 }

@@ -13,5 +13,13 @@
   I am using ngStyle for directly modifying multiple css properties
 </h1>
 
+
+<ul *ngIf="users">
+  <li *ngFor="let user of users.data">
+    <img [src]="user.avatar">
+    <p>{{user.first_name}} {{user.last_name}}</p>
+  </li>
+</ul>
+
 <!-- wrap the event in paranthesis for event binding with ts  -->
 <button (click)="clickMe()">Click me</button>
